@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karamella | Pudding Karamel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #fff8ed;
+            --caramel: #a76532;
+            --dark: #3e2518;
+            --brown: #704321;
+            --light: #f3e3d0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: var(--cream);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: var(--caramel);
+            font-weight: bold;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--caramel);
+        }
+
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 60px 8%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .label {
+            display: inline-block;
+            background: #f0dfca;
+            color: var(--brown);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: var(--caramel);
+        }
+
+        .hero-text p {
+            color: #806d60;
+            line-height: 1.8;
+            max-width: 450px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--caramel);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 480px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 48% 48% 20px 20px;
+            box-shadow: 15px 15px 0 #ead2b7;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #806d60;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px #70432110;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px #70432120;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #806d60;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price {
+            color: var(--caramel);
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .small-btn {
+            padding: 10px 15px;
+            font-size: 12px;
+        }
+
+        .about {
+            background: var(--light);
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            line-height: 1.9;
+            color: #715745;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .feature {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #806d60;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        #cart-info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0002;
+            font-size: 13px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image img {
+                height: 300px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Karamella.</div>
+
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">Tentang</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <span class="label">Homemade Dessert ♡</span>
+
+                <h1>Manisnya Karamel,<br>
+                    <span>Lembutnya Pudding.</span>
+                </h1>
+
+                <p>
+                    Nikmati pudding karamel yang lembut,
+                    creamy, dan manisnya pas. Dibuat dengan
+                    cinta untuk menemani setiap momen spesialmu.
+                </p>
+
+                <a href="#menu" class="btn">Jelajahi Menu →</a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1000&q=85"
+                    alt="Dessert pudding karamel">
+            </div>
+        </section>
+
+        <section id="menu">
+            <div class="section-title">
+                <h2>Menu Favorit Kami</h2>
+                <p>Temukan rasa manis yang bikin bahagia.</p>
+            </div>
+
+            <div class="products">
+
+                <div class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80"
+                        alt="Classic caramel pudding">
+
+                    <div class="card-content">
+                        <h3>Classic Caramel</h3>
+                        <p>Pudding klasik dengan tekstur lembut
+                           dan saus karamel yang menggoda.</p>
+
+                        <div class="card-bottom">
+                            <span class="price">Rp15.000</span>
+                            <button class="btn small-btn"
+                                onclick="pesan('Classic Caramel', 15000)">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80"
+                        alt="Creamy dessert">
+
+                    <div class="card-content">
+                        <h3>Milky Caramel</h3>
+                        <p>Perpaduan susu creamy dan karamel
+                           untuk sensasi manis yang istimewa.</p>
+
+                        <div class="card-bottom">
+                            <span class="price">Rp18.000</span>
+                            <button class="btn small-btn"
+                                onclick="pesan('Milky Caramel', 18000)">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
+                        alt="Dessert spesial">
+
+                    <div class="card-content">
+                        <h3>Caramel Special</h3>
+                        <p>Menu spesial dengan topping istimewa
+                           untuk memanjakan pencinta dessert.</p>
+
+                        <div class="card-bottom">
+                            <span class="price">Rp22.000</span>
+                            <button class="btn small-btn"
+                                onclick="pesan('Caramel Special', 22000)">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-content">
+                <h2>Dibuat dengan Sepenuh Hati</h2>
+
+                <p>
+                    Karamella hadir untuk memberikan pengalaman
+                    kuliner dessert yang sederhana tetapi berkesan.
+                    Kami mengutamakan rasa, tekstur lembut,
+                    dan tampilan yang menggugah selera di setiap sajian.
+                </p>
+
+                <div class="features">
+                    <div class="feature">♡ Bahan Berkualitas</div>
+                    <div class="feature">✦ Tekstur Lembut</div>
+                    <div class="feature">♧ Dibuat Fresh</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Yuk, Maniskan Harimu!</h2>
+
+            <p>
+                Pudding favoritmu hanya tinggal satu klik.
+                Hubungi kami untuk melakukan pemesanan.
+            </p>
+
+            <button class="btn" onclick="hubungiKami()">
+                Pesan via WhatsApp ☎
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Karamella Dessert. Made with love ♡</p>
+    </footer>
+
+    <div id="cart-info">
+        🛍️ Pesanan: <span id="jumlah">0</span> item
+    </div>
+
+    <script>
+        let jumlah = 0;
+        let daftarPesanan = [];
+
+        function pesan(nama, harga) {
+            jumlah++;
+            daftarPesanan.push({
+                nama: nama,
+                harga: harga
+            });
+
+            document.getElementById("jumlah").textContent = jumlah;
+
+            alert(
+                nama + " berhasil ditambahkan!\n" +
+                "Harga: Rp" + harga.toLocaleString("id-ID") +
+                "\nTotal item: " + jumlah
+            );
+        }
+
+        function hubungiKami() {
+            const nomorWhatsApp = "6281234567890";
+
+            if (daftarPesanan.length === 0) {
+                alert("Silakan pilih menu pudding terlebih dahulu.");
+                return;
+            }
+
+            let total = 0;
+
+            let pesanWA = "Halo Karamella! Saya ingin memesan:\n\n";
+
+            daftarPesanan.forEach(function(item) {
+                pesanWA += "- " + item.nama +
+                    " - Rp" + item.harga.toLocaleString("id-ID") + "\n";
+
+                total += item.harga;
+            });
+
+            pesanWA += "\nTotal: Rp" + total.toLocaleString("id-ID");
+            pesanWA += "\n\nMohon informasi cara pemesanannya. Terima kasih!";
+
+            const url = "https://wa.me/" + nomorWhatsApp +
+                "?text=" + encodeURIComponent(pesanWA);
+
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>
